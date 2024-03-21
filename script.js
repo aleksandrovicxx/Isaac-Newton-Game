@@ -5,8 +5,13 @@ document.addEventListener("DOMContentLoaded", () => {
     const gameContainerWidth = gameContainer.offsetWidth;
     const leftBtn = document.querySelector('.leftbtn')
     const RightBtn = document.querySelector('.rightbtn')
+    const torta = document.createElement('img')
+    torta.src = 'imgs/cake.png'
+    torta.alt = 'cake'
+    torta.classList.add('torta')
     const divForEnd = document.createElement('div')
     divForEnd.innerHTML = 'SAKUPIO SI 22 JABUKE. <br> SRECAN 22. RODJENDAN!'
+    divForEnd.appendChild(torta);
     divForEnd.classList.add('poruka')
     
     
@@ -45,9 +50,10 @@ document.addEventListener("DOMContentLoaded", () => {
     
     //creating apples   
     let creatingApple = () => {
-        if(pointsCounter == 2){
+        if(pointsCounter == 1){
             gameContainer.appendChild(divForEnd);
-            return
+            points.parentNode.removeChild(points)
+            return;
         }
         const apple = document.createElement('img')
         apple.src = '/imgs/apple.png'

@@ -60,13 +60,27 @@ body, html {
     right: 35%;
     transform: translateX(50%);
 }
-.poruka{
-    font-size: 70px;
-    font-family: myArcadeFont;
+.poruka {
+    font-size: 20px; /* Veličina fonta u odnosu na širinu ekrana */
+    font-family: MyArcadeFont;
     background-color: blue;
-    position: absolute;
+    position: fixed;
     z-index: 1;
-    border: 25px red double  ;
+    border-top: 25px red double;
+    border-bottom: 25px red double;
     color: white;
-    
+    display: flex;
+    justify-content: center; /* Centriranje horizontalno */
+    align-items: center; /* Centriranje vertikalno */
+    text-align: center; /* Centriranje teksta */
+    left: 50%; /* Pomeranje na sredinu ekrana */
+    top: 50%; /* Pomeranje na sredinu ekrana */
+    transform: translate(-50%, -50%); /* Pomeranje na sredinu ekrana */
+    width: 100%; /* Ograničavanje širine na 80% širine ekrana */
+    max-width: 100%; /* Maksimalna širina za manje ekrane */
+    overflow-wrap: break-word; /* Preklapanje teksta u novi red ako je potrebno */
+}
+.torta{
+    width: 150px;
+    height: 150px;
 }
