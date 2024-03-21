@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
-    const gameContainer = document.querySelectorAll(".game-container")
-    const isaac = document.querySelectorAll(".isaac")
+    const gameContainer = document.querySelector(".game-container")
+    const isaac = document.querySelector(".isaac")
     const isaacWidth = isaac.offsetWidth;
     const gameContainerWidth = gameContainer.offsetWidth;
 
@@ -14,8 +14,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     function moveIsaac(offset) {
-        //checking
-        let newPosition = isaac.offsetLeft + offset;
+        let newPosition = isaac.offsetLeft + offset; //checking
         if(newPosition < 0) {
             newPosition = 0;
         } else if (newPosition + isaacWidth > gameContainerWidth) {
@@ -27,11 +26,13 @@ document.addEventListener("DOMContentLoaded", () => {
     //creating apples   
     let creatingApple = () => {
         const apple = document.createElement('div')
-        apple.className.add('apple')
-        const randomX = Math.random() * (gameContainerWidth - 40)
-        apple.style.left = randomX + 'px'
-        gameContainer.appendChild(apple)
-
+        apple.classList.add('apple')
+        const randomX = Math.random() * (gameContainer.offsetWidth - 40)
+        apple.style.left = randomX + 'px';
+        
+        gameContainer.appendChild(apple);
+        
+        // console.log('yes');//checking
         //falling apples
         const fallInterval = setInterval(function () {
             const isaacArea = isaac.getBoundingClientRect()
