@@ -23,6 +23,8 @@ body, html {
     width: 220px;
     height: 280px;
     background-color: transparent;
+    max-width: 20%;
+    max-height: 20%;
 }
  .apple { /* stilizacija za jabuke */
     position: absolute;
@@ -31,13 +33,22 @@ body, html {
     background-color: transparent;
     border-radius: 50%;
 }
-.points{
-    font-family: MyArcadeFont   ;
+.points {
+    font-family: MyArcadeFont;
     position: absolute;
-    font-size: 80px;
+    font-size: 40px; /* Default veličina fonta */
     background-color: green;
     border: 9px solid red;
     color: white;
+    max-width: 40%;
+    overflow-wrap: break-word;
+}
+
+/* Media upit za prilagođavanje veličine fonta na manjim ekranima */
+@media screen and (max-width: 600px) {
+    .points {
+        font-size: 30px; /* Veličina fonta za manje ekrane */
+    }
 }
 .leftbtn{
     font-size: 40px;

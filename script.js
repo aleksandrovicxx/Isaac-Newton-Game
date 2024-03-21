@@ -50,7 +50,7 @@ document.addEventListener("DOMContentLoaded", () => {
     
     //creating apples   
     let creatingApple = () => {
-        if(pointsCounter == 1){
+        if(pointsCounter == 22){
             gameContainer.appendChild(divForEnd);
             points.parentNode.removeChild(points)
             return;
