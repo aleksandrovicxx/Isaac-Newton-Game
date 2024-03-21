@@ -25,7 +25,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
     //creating apples   
     let creatingApple = () => {
-        const apple = document.createElement('div')
+        const apple = document.createElement('img')
+        apple.src = '/imgs/apple.png'
         apple.classList.add('apple')
         const randomX = Math.random() * (gameContainer.offsetWidth - 40)
         apple.style.left = randomX + 'px';
