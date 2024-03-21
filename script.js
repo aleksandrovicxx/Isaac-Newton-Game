@@ -4,16 +4,19 @@ document.addEventListener("DOMContentLoaded", () => {
     const isaacWidth = isaac.offsetWidth;
     const gameContainerWidth = gameContainer.offsetWidth;
     const leftBtn = document.querySelector('.leftbtn')
-    console.log(leftBtn);
     const RightBtn = document.querySelector('.rightbtn')
-    console.log(RightBtn);
-
+    const divForEnd = document.createElement('div')
+    divForEnd.innerHTML = 'SAKUPIO SI 22 JABUKE. <br> SRECAN 22. RODJENDAN!'
+    divForEnd.classList.add('poruka')
+    
+    
+    
     let pointsCounter = 0;
     const points = document.createElement('p')
     points.classList.add('points')
     points.innerHTML = pointsCounter
     gameContainer.appendChild(points)
-
+    
     //moving Isaac: keyboard
     document.addEventListener('keydown', (e) =>{
         if(e.key === 'ArrowLeft'){
@@ -29,7 +32,7 @@ document.addEventListener("DOMContentLoaded", () => {
     RightBtn.addEventListener('click', () => {
         moveIsaac(20)
     })
-
+    
     function moveIsaac(offset) {
         let newPosition = isaac.offsetLeft + offset; //checking
         if(newPosition < 0) {
@@ -39,9 +42,13 @@ document.addEventListener("DOMContentLoaded", () => {
         }
         isaac.style.left = newPosition + 'px'
     }
-
+    
     //creating apples   
     let creatingApple = () => {
+        if(pointsCounter == 2){
+            gameContainer.appendChild(divForEnd);
+            return
+        }
         const apple = document.createElement('img')
         apple.src = '/imgs/apple.png'
         apple.classList.add('apple')
@@ -55,7 +62,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const fallInterval = setInterval(function () {
             const isaacArea = isaac.getBoundingClientRect()
             const applesArea = apple.getBoundingClientRect()
-
+            
             if(applesArea.bottom >= isaacArea.top && applesArea.right >= isaacArea.left && isaacArea.right >= applesArea.left) {
                 pointsCounter++;
                 points.innerHTML = 'Points: ' + pointsCounter
@@ -69,7 +76,7 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         }, 20)
     }
-
+    
     setInterval(creatingApple, 2000)
-
+    
 })

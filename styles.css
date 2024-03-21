@@ -60,3 +60,13 @@ body, html {
     right: 35%;
     transform: translateX(50%);
 }
+.poruka{
+    font-size: 70px;
+    font-family: myArcadeFont;
+    background-color: blue;
+    position: absolute;
+    z-index: 1;
+    border: 25px red double  ;
+    color: white;
+    
+}
