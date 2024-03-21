@@ -12,7 +12,7 @@ body, html {
     position: relative;
     width: 100%;
     height: 100%;
-    background-image: url("imgs/bg.png");
+    background-image: url("imgs/mmbg.png");
     background-size: 100% 100%;
 }
 .isaac{
@@ -31,7 +31,6 @@ body, html {
     width: 80px;
     height: 80px;
     background-color: transparent;
-    border-radius: 50%;
 }
 .points {
     font-family: MyArcadeFont;

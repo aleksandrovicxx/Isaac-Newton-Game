@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", () => {
     torta.alt = 'cake'
     torta.classList.add('torta')
     const divForEnd = document.createElement('div')
-    divForEnd.innerHTML = 'SAKUPIO SI 22 JABUKE. <br> SRECAN 22. RODJENDAN!'
+    divForEnd.innerHTML = 'SAKUPIO SI 22 SIRA. <br> SRECAN 22. RODJENDAN!'
     divForEnd.appendChild(torta);
     divForEnd.classList.add('poruka')
     
@@ -56,7 +56,7 @@ document.addEventListener("DOMContentLoaded", () => {
             return;
         }
         const apple = document.createElement('img')
-        apple.src = '/imgs/apple.png'
+        apple.src = '/imgs/chese.png'
         apple.classList.add('apple')
         const randomX = Math.random() * (gameContainer.offsetWidth - 40)
         apple.style.left = randomX + 'px';
