@@ -4,6 +4,12 @@ document.addEventListener("DOMContentLoaded", () => {
     const isaacWidth = isaac.offsetWidth;
     const gameContainerWidth = gameContainer.offsetWidth;
 
+    let pointsCounter = 0;
+    const points = document.createElement('p')
+    points.classList.add('points')
+    points.innerHTML = pointsCounter
+    gameContainer.appendChild(points)
+
     //moving Isaac:
     document.addEventListener('keydown', (e) =>{
         if(e.key === 'ArrowLeft'){
@@ -40,6 +46,8 @@ document.addEventListener("DOMContentLoaded", () => {
             const applesArea = apple.getBoundingClientRect()
 
             if(applesArea.bottom >= isaacArea.top && applesArea.right >= isaacArea.left && isaacArea.right >= applesArea.left) {
+                pointsCounter++;
+                points.innerHTML = 'Points: ' + pointsCounter
                 apple.remove()
                 clearInterval(fallInterval)
             } else if (applesArea.bottom >= gameContainer.offsetHeight) {
