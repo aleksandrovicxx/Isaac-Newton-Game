@@ -3,6 +3,10 @@ document.addEventListener("DOMContentLoaded", () => {
     const isaac = document.querySelector(".isaac")
     const isaacWidth = isaac.offsetWidth;
     const gameContainerWidth = gameContainer.offsetWidth;
+    const leftBtn = document.querySelector('.leftbtn')
+    console.log(leftBtn);
+    const RightBtn = document.querySelector('.rightbtn')
+    console.log(RightBtn);
 
     let pointsCounter = 0;
     const points = document.createElement('p')
@@ -10,7 +14,7 @@ document.addEventListener("DOMContentLoaded", () => {
     points.innerHTML = pointsCounter
     gameContainer.appendChild(points)
 
-    //moving Isaac:
+    //moving Isaac: keyboard
     document.addEventListener('keydown', (e) =>{
         if(e.key === 'ArrowLeft'){
             moveIsaac(-20);
@@ -18,6 +22,13 @@ document.addEventListener("DOMContentLoaded", () => {
             moveIsaac(20)
         }
     });
+    //moving Isaac: touch
+    leftBtn.addEventListener('click', () =>{
+        moveIsaac(-20)
+    })
+    RightBtn.addEventListener('click', () => {
+        moveIsaac(20)
+    })
 
     function moveIsaac(offset) {
         let newPosition = isaac.offsetLeft + offset; //checking
