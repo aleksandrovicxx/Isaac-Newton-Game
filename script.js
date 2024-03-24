@@ -5,16 +5,6 @@ document.addEventListener("DOMContentLoaded", () => {
     const gameContainerWidth = gameContainer.offsetWidth;
     const leftBtn = document.querySelector('.leftbtn')
     const RightBtn = document.querySelector('.rightbtn')
-    const torta = document.createElement('img')
-    torta.src = 'imgs/cake.png'
-    torta.alt = 'cake'
-    torta.classList.add('torta')
-    const divForEnd = document.createElement('div')
-    divForEnd.innerHTML = 'SAKUPIO SI 22 SIRA. <br> SRECAN 22. RODJENDAN!'
-    divForEnd.appendChild(torta);
-    divForEnd.classList.add('poruka')
-    
-    
     
     let pointsCounter = 0;
     const points = document.createElement('p')
@@ -50,13 +40,8 @@ document.addEventListener("DOMContentLoaded", () => {
     
     //creating apples   
     let creatingApple = () => {
-        if(pointsCounter == 22){
-            gameContainer.appendChild(divForEnd);
-            points.parentNode.removeChild(points)
-            return;
-        }
-        const apple = document.createElement('img')
-        apple.src = '/imgs/chese.png'
+        let apple = document.createElement('img')
+        apple.src = '/imgs/apple.png'
         apple.classList.add('apple')
         const randomX = Math.random() * (gameContainer.offsetWidth - 40)
         apple.style.left = randomX + 'px';
