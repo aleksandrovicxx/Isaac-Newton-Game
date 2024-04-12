@@ -45,7 +45,6 @@ document.addEventListener("DOMContentLoaded", () => {
         apple.classList.add('apple')
         const randomX = Math.random() * (gameContainer.offsetWidth - 40)
         apple.style.left = randomX + 'px';
-        
         gameContainer.appendChild(apple);
         
         // console.log('yes');//checking
